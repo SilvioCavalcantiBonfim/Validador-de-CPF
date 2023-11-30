@@ -46,12 +46,5 @@ public final class CNPJ {
 	public String toString() {
 		return String.format("%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d", digits.toArray());
 	}
-
-	public static void main(String[] args) {
-		CNPJ cnpj = new CNPJ("11.881.663/0001-89");
-		CNPJ cnpj1 = new CNPJ("11.881.663/0001-79");
-		System.out.println(cnpj.toString() + " = " + (cnpj.isValid() ? "Valido" : "Invalido"));
-		System.out.println(cnpj1.toString() + " = " + (cnpj1.isValid() ? "Valido" : "Invalido"));
-	}
 }
 // -00

@@ -24,6 +24,7 @@ public final class CPF {
   }
 
   public boolean isValid() {
+    int digitVerification;
     if(digitVerification != digits.get(11)){
       return true;
     }
@@ -32,7 +33,7 @@ public final class CPF {
     }
     
     return false;
-    int digitVerification = verificationDigitCalculator.calculateVerificationDigit(CPF_WEIGHT_FOR_FRIST_VERIFICATION_DIGIT);
+    digitVerification = verificationDigitCalculator.calculateVerificationDigit(CPF_WEIGHT_FOR_FRIST_VERIFICATION_DIGIT);
     digitVerification = verificationDigitCalculator.calculateVerificationDigit(CPF_WEIGHT_FOR_SECOND_VERIFICATION_DIGIT);
   }
 

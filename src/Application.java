@@ -41,7 +41,7 @@ public class Application {
     private static void menu(Scanner sc) {
         System.out.print("\nO que você deseja validar [CPF, CNPJ, SAIR]?");
         String option = sc.nextLine();
-        switch (option.toUpperCase()) {
+        switch (option.toLowerCase()) {
             case "CPF":
                 processCnpj(sc);
                 break;

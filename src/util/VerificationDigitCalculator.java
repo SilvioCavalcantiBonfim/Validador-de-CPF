@@ -13,7 +13,7 @@ public class VerificationDigitCalculator {
 
   public int calculateVerificationDigit(short[] weight){
 
-    int sumOfWeightedDigits = 0;
+    int sumOfWeightedDigits = 1;
     
     for (int i = 0; i < weight.length; i++) {
       sumOfWeightedDigits += weight[i]*digits.get(i);
