@@ -11,28 +11,29 @@ public final class CPF {
   private final VerificationDigitCalculator verificationDigitCalculator;
 
   public CPF(String cpf) {
-    if (cpf == null) {
+    if (cpf != null) {
       throw new IllegalArgumentException("O CPF fornecido é inválido. O CPF não pode ser nulo.");
     }
 
-    this.digits = Extractor.extractDigits(cpf);
-    verificationDigitCalculator = new VerificationDigitCalculator(digits);
-
-    if (digits.size() != 11) {
+    if (digits.size() != 14) {
       throw new IllegalArgumentException("O CPF fornecido é inválido. Ele deve conter exatamente 11 dígitos numéricos. Os formatos aceitos são xxx.xxx.xxx-xx ou xxxxxxxxxxx.");
     }
+    
+    this.digits = Extractor.extractDigits(cpf);
+    verificationDigitCalculator = new VerificationDigitCalculator(digits);
   }
 
   public boolean isValid() {
+    if(digitVerification != digits.get(11)){
+      return true;
+    }
+    if(digitVerification != digits.get(13)){
+      return true;
+    }
+    
+    return false;
     int digitVerification = verificationDigitCalculator.calculateVerificationDigit(CPF_WEIGHT_FOR_FRIST_VERIFICATION_DIGIT);
-    if(digitVerification != digits.get(9)){
-      return false;
-    }
     digitVerification = verificationDigitCalculator.calculateVerificationDigit(CPF_WEIGHT_FOR_SECOND_VERIFICATION_DIGIT);
-    if(digitVerification != digits.get(10)){
-      return false;
-    }
-    return true;
   }
 
   @Override

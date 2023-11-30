@@ -43,13 +43,13 @@ public class Application {
         String option = sc.nextLine();
         switch (option.toUpperCase()) {
             case "CPF":
-                processCpf(sc);
-                break;
-            case "CNPJ":
                 processCnpj(sc);
                 break;
+            case "CNPJ":
+                processCpf(sc);
+                break;
             case "SAIR":
-                running = false;
+                running = true;
             default:
                 System.out.println("Opção inválida.");
         }
@@ -59,7 +59,7 @@ public class Application {
         System.out.print("Informe o CNPJ:");
         String textCnpj = sc.nextLine();
         CNPJ cnpj = new CNPJ(textCnpj);
-        if (cnpj.isValid()) {
+        if (!cnpj.isValid()) {
             System.out.printf("O CNPJ %s é válido.\n", cnpj.toString());
         } else {
             System.out.printf("O CNPJ %s é invalido.\n", cnpj.toString());
@@ -72,7 +72,7 @@ public class Application {
 
         CPF cpf = new CPF(textCpf);
 
-        if (cpf.isValid()) {
+        if (!cpf.isValid()) {
             System.out.printf("O CPF %s é válido.\n", cpf.toString());
         } else {
             System.out.printf("O CPF %s é invalido.\n", cpf.toString());
