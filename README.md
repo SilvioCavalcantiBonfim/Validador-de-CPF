@@ -32,7 +32,7 @@ public static void main(String[] args) {
 }
 ```
 
-#Desafio
+## Desafio
 
 Estamos solicitando a implementação de um sistema de cadastro. Este sistema deve permitir o cadastro de pessoas físicas e jurídicas através de uma interface de linha de comando (CLI). Os atributos para cadastro incluem nome, id (usando um identificador hash), CPF/CNPJ, email, celular, endereço e data de nascimento (apenas para pessoa física). Além disso, o sistema deve incluir validadores para verificar se os valores dos atributos estão de acordo com as regras definidas. Importante ressaltar que todos os dados devem ser armazenados em memória, sem a necessidade de um banco de dados persistente.
 
